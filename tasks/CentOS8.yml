@@ -1,0 +1,14 @@
+---
+- name: Check remi status
+  shell: dnf config-manager remi | grep -q 'enabled = True'
+  changed_when: False
+  ignore_errors: True
+  register: remi_status
+
+- name: Install remi
+  dnf:
+    name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+    state: present
+
+- name: Enabled remi
+  command: dnf config-manager --set-enabled PowerTools 

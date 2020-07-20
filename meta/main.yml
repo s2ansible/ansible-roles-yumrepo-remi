@@ -1,0 +1,16 @@
+galaxy_info:
+  role_name: yumrepo_remi
+  author: beaverjr
+  description: install remi repository
+  company: S2 Co.,Ltd.
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: Amazon
+    - name: EL
+      versions:
+        - 8
+        - 7
+
+  galaxy_tags:
+    - system
